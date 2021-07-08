@@ -81,12 +81,24 @@ function miyagi () {
         }
     }
 }
-
-
-Cheat.RegisterCallback ("Draw", "miyagi");
-Cheat.RegisterCallback("round_mvp", "mvpmvp");
-Cheat.RegisterCallback("round_start", "roundstart");
-Cheat.RegisterCallback("Draw", "vzlomtag");
-Cheat.RegisterCallback("round_end", "roundend");
-Cheat.RegisterCallback("Draw", "vzlomat");
+function rendermorgenaa() {
+    if (!World.GetServerString()) return;
+    vzlomaafont = Render.AddFont("Smallest Pixel-7", 16, 400);
+    x = screensize[0];
+    y = screensize[1];
+    var vzlomaa_check = UI.IsHotkeyActive("Script Items", "vzlom aa bind");
+    var morgenaa_check2 = UI.GetValue("Script Items", "vzlom aa");
+    if (morgenaa_check2 == true) {
+        Render.StringCustom(x / 25, y / 2 + 20, 1, vzlomaa_check ? "vzlomaa" : "vzlomaa", vzlomaa_check ? [ 0, 255, 0, 255 ] : [ 255, 0, 0, 255 ], vzlomaafont );
+    }
+function Main()
+{
+	Cheat.RegisterCallback("CreateMove", "antiaim");
+	Cheat.RegisterCallback ("Draw", "miyagi");
+	Cheat.RegisterCallback("round_mvp", "mvpmvp");
+	Cheat.RegisterCallback("round_start", "roundstart");
+	Cheat.RegisterCallback("Draw", "vzlomtag");
+	Cheat.RegisterCallback("round_end", "roundend");
+	Cheat.RegisterCallback("Draw", "vzlomat");
+}
 //взломк
